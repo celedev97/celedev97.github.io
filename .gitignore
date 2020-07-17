@@ -1,0 +1,6 @@
+# ---> VisualStudioCode
+.settings
+
+# HUGO
+/public/*
+/resources/_gen/*
