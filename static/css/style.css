@@ -1,0 +1,9 @@
+.animated-text {
+    white-space: nowrap;
+    overflow: hidden;
+    animation: animated-text 1s steps(29,end) 0.1s 1 normal both;
+}
+@keyframes animated-text{
+    from{width: 150px;}
+    to{width: 100%;}
+}
