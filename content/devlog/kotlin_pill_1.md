@@ -5,7 +5,8 @@ toc: false
 images:
 parent: "devlog"
 tags:
-  - untagged
+  - kotlin
+  - kotlin_pills
 ---
 
 Why is kotlin awesome?
@@ -38,6 +39,8 @@ OUTPUT:
 what a shitty world
 ```
 
+<hr>
+
 This is the most awesome thing ever, as it makes everything more simple, no more:
 ```java
 dog.getOwner().getDad().setName("Patrick")
@@ -51,6 +54,12 @@ dog.owner.dad.name = "Patrick"
 That's way more synthetic and clear.
 
 Plus it keeps its interoperability with Java since on compile-time it get translated to a private field with public getter and setter.
+
+<hr>
+
+Another super nice thing is that kotlin automatically turn Java getters and setters into Kotlin properties.
+
+So from Kotlin you can reference a Java class and if it has the correct naming convention you can use its properties without the need to call getters and setters.
 
 <hr>
 
