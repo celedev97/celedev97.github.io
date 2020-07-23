@@ -8,4 +8,4 @@ menu: "main"
 weight: 100
 ---
 
-This is where i write bad things about the bad things i do (badthing-ception)
+This is where i write bad things about the bad things i do (*badthing-ception*)
