@@ -4,6 +4,10 @@ title 			= "fc-dev"
 theme 			= "hello-friend-ng"
 paginate     	= 10
 
+#allow for raw html
+[markup.goldmark.renderer]
+unsafe= true
+
 [params]
   # Subtitle for home
   homeSubtitle = "Depressed developer :D"

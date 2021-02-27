@@ -1,15 +1,9 @@
 ---
-title: "Girnarwhal day 1"
+title: "DevLog"
 date: 2020-07-17T18:24:53+02:00
 toc: false
 images:
-menu: "devlog"
-tags:
-  - untagged
+menu: "main"
 ---
 
-
-asd
-asd
-asd
-asd
+This is where i write bad things about the bad things i do (badthing-ception)
