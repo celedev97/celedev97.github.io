@@ -2,8 +2,11 @@
 title: "About me"
 date: 2020-07-17T18:24:53+02:00
 toc: false
-menu: "main"
 images:
+
+menu: "main"
+weight: 999
+
 ---
 
 Programmer since 2008.
