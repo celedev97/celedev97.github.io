@@ -37,6 +37,7 @@ params:
   logo:
     logoText: root@fc-dev
     logoCursorColor: grey
+    logoAfterMark: :~#
   
   #homepage image
   portrait:
