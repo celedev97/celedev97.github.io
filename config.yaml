@@ -52,7 +52,7 @@ params:
     - name: email
       url: 'mailto:feddycap97@gmail.com'
     - name: github
-      url: 'https://github.com/fc-dev'
+      url: 'https://github.com/fcdev'
     - name: linkedin
       url: 'https://www.linkedin.com/in/federicocapece/'
     - name: stackoverflow
