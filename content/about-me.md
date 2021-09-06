@@ -16,8 +16,8 @@ Languages (ordered by knowledge/how much i like them):
 * C#
 * Kotlin
 * Python
-* PHP *(codeigniter and laravel included)*
-* JS *(Jquery included)*
+* PHP *(codeigniter included)*
+* JS *(Jquery, Vue, Angular included)*
 * HTML
 * CSS
 * SASS

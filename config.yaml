@@ -5,7 +5,7 @@ theme: hello-friend-ng
 paginate: 10
 
 author:
-  name: Celeste Capece
+  name: Fede Capece
  
 #allow for raw html
 markup:
@@ -47,8 +47,8 @@ params:
 
   #social link
   social:
-    - name: twitter
-      url: 'https://twitter.com/gamedev_cutie'
+    #- name: twitter
+    #  url: 'https://twitter.com/gamedev_cutie'
     - name: email
       url: 'mailto:feddycap97@gmail.com'
     - name: github
@@ -57,8 +57,8 @@ params:
       url: 'https://www.linkedin.com/in/federicocapece/'
     - name: stackoverflow
       url: 'https://stackoverflow.com/users/4698299'
-    - name: instagram
-      url: 'https://instagr.am/gamedev_cutie'
+    #- name: instagram
+    #  url: 'https://instagr.am/gamedev_cutie'
 
 #weird shit
 taxonomies:
