@@ -5,7 +5,7 @@ theme: hello-friend-ng
 paginate: 10
 
 author:
-  name: Fede Capece
+  name: Celeste Capece
  
 #allow for raw html
 markup:
@@ -33,32 +33,32 @@ params:
   # Default theme "light" or "dark"
   defaultTheme: dark
 
-  #logo
+  # logo
   logo:
     logoText: root@celedev97
     logoCursorColor: grey
     logoAfterMark: :~#
   
-  #homepage image
+  # homepage image
   portrait:
     path: /img/celedev97.png
     alt: Portrait
     maxWidth: 350px
 
-  #social link
+  # social link
   social:
-    #- name: twitter
-    #  url: 'https://twitter.com/gamedev_cutie'
+    - name: twitter
+      url: 'https://twitter.com/gamedev_cutie'
     - name: email
-      url: 'mailto:feddycap97@gmail.com'
+      url: 'mailto:celedev97@gmail.com'
     - name: github
-      url: 'https://github.com/fcdev'
+      url: 'https://github.com/celedev97'
     - name: linkedin
       url: 'https://www.linkedin.com/in/federicocapece/'
     - name: stackoverflow
       url: 'https://stackoverflow.com/users/4698299'
-    #- name: instagram
-    #  url: 'https://instagr.am/gamedev_cutie'
+    - name: instagram
+      url: 'https://instagr.am/gamedev_cutie'
 
 #weird shit
 taxonomies:
