@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "/home/runner/work/fcdev.github.io/fcdev.github.io",
+	"sourceRoot": "/home/runner/work/celedev97.github.io/celedev97.github.io",
 	"sources": [
 		"assets/scss/main.scss",
 		"themes/hello-friend-ng/assets/scss/_normalize.scss",
