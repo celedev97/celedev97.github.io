@@ -52,11 +52,11 @@ params:
     - name: email
       url: 'mailto:feddycap97@gmail.com'
     - name: github
-      url: 'https://github.com/fcdev'
+      url: 'https://github.com/celedev97'
     - name: linkedin
-      url: 'https://www.linkedin.com/in/federicocapece/'
-    - name: stackoverflow
-      url: 'https://stackoverflow.com/users/4698299'
+      url: 'https://www.linkedin.com/in/celedev97/'
+    #- name: stackoverflow
+    #  url: 'https://stackoverflow.com/users/4698299'
     #- name: instagram
     #  url: 'https://instagr.am/gamedev_cutie'
 
