@@ -39,7 +39,7 @@ const { title, description = 'CeleDev97 — Personal site' } = Astro.props;
       blocks.forEach(block => {
         const cmd = block.querySelector('.cmd-line, .home-prompt');
         const output = block.querySelector('.terminal-output');
-        if (cmd) { cmd.dataset.text = cmd.textContent; cmd.textContent = ''; }
+        if (cmd) { cmd.dataset.text = cmd.textContent; cmd.textContent = ''; cmd.style.visibility = 'hidden'; }
         if (output) output.style.visibility = 'hidden';
       });
 
@@ -64,6 +64,7 @@ const { title, description = 'CeleDev97 — Personal site' } = Astro.props;
         const cmd = block.querySelector('.cmd-line, .home-prompt');
         const output = block.querySelector('.terminal-output');
         if (!cmd) { runBlock(index + 1); return; }
+        cmd.style.visibility = 'visible';
         typeCmd(cmd, () => {
           if (output) output.style.visibility = 'visible';
           setTimeout(() => runBlock(index + 1), BETWEEN_BLOCKS_DELAY);
