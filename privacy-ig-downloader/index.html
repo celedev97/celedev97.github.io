@@ -6,7 +6,7 @@ The app does show a little advertising banner that work trough admob, for info a
         admob treats users' data check admob's privacy policy.
 </p> </div> </div>  </main> <footer> <span>© 2026 CeleDev97</span> </footer> <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const CHAR_DELAY = 35;
+      const TYPE_DURATION = 600; // ms total per command, regardless of length
       const AFTER_CMD_DELAY = 200;
       const BETWEEN_BLOCKS_DELAY = 300;
 
@@ -22,6 +22,7 @@ The app does show a little advertising banner that work trough admob, for info a
 
       function typeCmd(cmd, done) {
         const text = cmd.dataset.text;
+        const delay = Math.max(15, Math.round(TYPE_DURATION / text.length));
         let i = 0;
         cmd.classList.add('typing');
         const id = setInterval(() => {
@@ -31,7 +32,7 @@ The app does show a little advertising banner that work trough admob, for info a
             cmd.classList.remove('typing');
             setTimeout(done, AFTER_CMD_DELAY);
           }
-        }, CHAR_DELAY);
+        }, delay);
       }
 
       function runBlock(index) {

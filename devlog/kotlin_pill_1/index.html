@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="CeleDev97 — Personal site"><title>Kotlin&#39;s pills #1 properties introduction | CeleDev97</title><link rel="icon" type="image/png" href="/img/celedev97.png"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css"><link rel="stylesheet" href="/_astro/_slug_.ChLNNKwH.css"></head> <body> <header> <a href="/" class="header-brand"> <span class="prompt-user">root</span> <span class="prompt-at">@</span> <span class="prompt-host">cele.dev</span> <span class="prompt-path">:~</span> <span class="prompt-dollar">$</span> <span class="cursor"></span> </a> <nav> <a href="/devlog" aria-current="page">devlog</a> <a href="/about-me">about</a> </nav> </header> <main>  <div class="terminal-block"> <div class="cmd-line">cat /devlog/kotlin_pill_1.md</div> <div class="terminal-output"> <h1>Kotlin&#39;s pills #1 properties introduction</h1> <p class="post-slim-meta"> 2020-07-17 · #kotlin · #kotlin_pills </p>  <p>Why is kotlin awesome?</p>
+<p>Because unlike java it doesn’t sucks.</p>
+<p>For example kotlin have properties:</p>
+<pre class="language-kotlin" data-language="kotlin"><code is:raw class="language-kotlin"><span class="token keyword">var</span> test <span class="token operator">=</span> <span class="token string-literal singleline"><span class="token string">&quot;hello&quot;</span></span>
+  <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> field <span class="token operator">+</span> <span class="token string-literal singleline"><span class="token string">&quot; world&quot;</span></span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">set</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    field <span class="token operator">=</span> value
+  <span class="token punctuation">}</span>
+</code></pre>
+<p>Does this look like the classical Java shit with getters and setters?</p>
+<p>Yes it does, but…</p>
+<p>You can use it like this</p>
+<pre class="language-kotlin" data-language="kotlin"><code is:raw class="language-kotlin">test <span class="token operator">=</span> <span class="token string-literal singleline"><span class="token string">&quot;what a shitty&quot;</span></span>
+<span class="token function">println</span><span class="token punctuation">(</span>test<span class="token punctuation">)</span>
+</code></pre>
+<p>OUTPUT:</p>
+<pre class="language-plaintext" data-language="plaintext"><code is:raw class="language-plaintext">what a shitty world
+</code></pre>
+<hr/>
+<p>This is the most awesome thing ever, as it makes everything more simple, no more:</p>
+<pre class="language-java" data-language="java"><code is:raw class="language-java">dog<span class="token punctuation">.</span><span class="token function">getOwner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">&quot;Patrick&quot;</span><span class="token punctuation">)</span>
+</code></pre>
+<p>This just becomes:</p>
+<pre class="language-kotlin" data-language="kotlin"><code is:raw class="language-kotlin">dog<span class="token punctuation">.</span>owner<span class="token punctuation">.</span>dad<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string-literal singleline"><span class="token string">&quot;Patrick&quot;</span></span>
+</code></pre>
+<p>That’s way more synthetic and clear.</p>
+<p>Plus it keeps its interoperability with Java since on compile-time it get translated to a private field with public getter and setter.</p>
+<hr/>
+<p>Another super nice thing is that kotlin automatically turn Java getters and setters into Kotlin properties.</p>
+<p>So from Kotlin you can reference a Java class and if it has the correct naming convention you can use its properties without the need to call getters and setters.</p>
+<hr/>
+<p>Protip:</p>
+<p>If the get or the set are single lines you can make it shorter by writing it like this:</p>
+<pre class="language-kotlin" data-language="kotlin"><code is:raw class="language-kotlin"><span class="token keyword">var</span> test <span class="token operator">=</span> <span class="token string-literal singleline"><span class="token string">&quot;hello&quot;</span></span>
+  <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> field <span class="token operator">+</span> <span class="token string-literal singleline"><span class="token string">&quot; world&quot;</span></span>
+  <span class="token keyword">set</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">{</span> field <span class="token operator">=</span> value <span class="token punctuation">}</span>
+</code></pre>  </div> </div>  </main> <footer> <span>© 2026 CeleDev97</span> </footer> <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const TYPE_DURATION = 600; // ms total per command, regardless of length
+      const AFTER_CMD_DELAY = 200;
+      const BETWEEN_BLOCKS_DELAY = 300;
+
+      const blocks = Array.from(document.querySelectorAll('.terminal-block'));
+      if (!blocks.length) return;
+
+      blocks.forEach(block => {
+        const cmd = block.querySelector('.cmd-line, .home-prompt');
+        const output = block.querySelector('.terminal-output');
+        if (cmd) { cmd.dataset.text = cmd.textContent; cmd.textContent = ''; }
+        if (output) output.style.visibility = 'hidden';
+      });
+
+      function typeCmd(cmd, done) {
+        const text = cmd.dataset.text;
+        const delay = Math.max(15, Math.round(TYPE_DURATION / text.length));
+        let i = 0;
+        cmd.classList.add('typing');
+        const id = setInterval(() => {
+          cmd.textContent = text.slice(0, ++i);
+          if (i >= text.length) {
+            clearInterval(id);
+            cmd.classList.remove('typing');
+            setTimeout(done, AFTER_CMD_DELAY);
+          }
+        }, delay);
+      }
+
+      function runBlock(index) {
+        if (index >= blocks.length) return;
+        const block = blocks[index];
+        const cmd = block.querySelector('.cmd-line, .home-prompt');
+        const output = block.querySelector('.terminal-output');
+        if (!cmd) { runBlock(index + 1); return; }
+        typeCmd(cmd, () => {
+          if (output) output.style.visibility = 'visible';
+          setTimeout(() => runBlock(index + 1), BETWEEN_BLOCKS_DELAY);
+        });
+      }
+
+      setTimeout(() => runBlock(0), 200);
+    });
+  </script> </body> </html>
