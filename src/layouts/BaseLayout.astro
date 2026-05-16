@@ -29,7 +29,7 @@ const { title, description = 'CeleDev97 — Personal site' } = Astro.props;
     <Footer />
   <script is:inline>
     document.addEventListener('DOMContentLoaded', () => {
-      const CHAR_DELAY = 35;
+      const TYPE_DURATION = 600; // ms total per command, regardless of length
       const AFTER_CMD_DELAY = 200;
       const BETWEEN_BLOCKS_DELAY = 300;
 
@@ -45,6 +45,7 @@ const { title, description = 'CeleDev97 — Personal site' } = Astro.props;
 
       function typeCmd(cmd, done) {
         const text = cmd.dataset.text;
+        const delay = Math.max(15, Math.round(TYPE_DURATION / text.length));
         let i = 0;
         cmd.classList.add('typing');
         const id = setInterval(() => {
@@ -54,7 +55,7 @@ const { title, description = 'CeleDev97 — Personal site' } = Astro.props;
             cmd.classList.remove('typing');
             setTimeout(done, AFTER_CMD_DELAY);
           }
-        }, CHAR_DELAY);
+        }, delay);
       }
 
       function runBlock(index) {
