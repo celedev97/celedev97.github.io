@@ -25,7 +25,7 @@ const posts = (await getCollection('devlog')).sort(
                 <span class="ls-date">{date}</span>
                 <div class="ls-info">
                   <div class="ls-name">
-                    <a href={`/devlog/${post.slug}`}>{post.slug}/</a>
+                    <a href={`/devlog/${post.id}`}>{post.id}/</a>
                   </div>
                   <div class="ls-desc">{post.data.title}</div>
                   {post.data.tags && post.data.tags.length > 0 && (
