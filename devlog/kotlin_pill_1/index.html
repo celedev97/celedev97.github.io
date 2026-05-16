@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="CeleDev97 — Personal site"><title>Kotlin&#39;s pills #1 properties introduction | CeleDev97</title><link rel="icon" type="image/png" href="/img/celedev97.png"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css"><link rel="stylesheet" href="/_astro/_slug_.JaqtmFrd.css"></head> <body> <header> <a href="/" class="header-brand"> <span class="prompt-user">root</span> <span class="prompt-at">@</span> <span class="prompt-host">cele.dev</span> <span class="prompt-path">:~</span> <span class="prompt-dollar">$</span> <span class="cursor"></span> </a> <nav> <a href="/devlog" aria-current="page">devlog</a> <a href="/about-me">about</a> </nav> </header> <main>  <div class="cmd-line">cat /devlog/kotlin_pill_1.md</div> <h1>Kotlin&#39;s pills #1 properties introduction</h1> <p class="post-slim-meta"> 2020-07-17 · #kotlin · #kotlin_pills </p> <p>Why is kotlin awesome?</p>
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="CeleDev97 — Personal site"><title>Kotlin&#39;s pills #1 properties introduction | CeleDev97</title><link rel="icon" type="image/png" href="/img/celedev97.png"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css"><link rel="stylesheet" href="/_astro/_slug_.ChLNNKwH.css"></head> <body> <header> <a href="/" class="header-brand"> <span class="prompt-user">root</span> <span class="prompt-at">@</span> <span class="prompt-host">cele.dev</span> <span class="prompt-path">:~</span> <span class="prompt-dollar">$</span> <span class="cursor"></span> </a> <nav> <a href="/devlog" aria-current="page">devlog</a> <a href="/about-me">about</a> </nav> </header> <main>  <div class="terminal-block"> <div class="cmd-line">cat /devlog/kotlin_pill_1.md</div> <div class="terminal-output"> <h1>Kotlin&#39;s pills #1 properties introduction</h1> <p class="post-slim-meta"> 2020-07-17 · #kotlin · #kotlin_pills </p>  <p>Why is kotlin awesome?</p>
 <p>Because unlike java it doesn’t sucks.</p>
 <p>For example kotlin have properties:</p>
 <pre class="language-kotlin" data-language="kotlin"><code is:raw="" class="language-kotlin"><span class="token keyword">var</span> test <span class="token operator">=</span> <span class="token string-literal singleline"><span class="token string">"hello"</span></span>
@@ -36,4 +36,48 @@
 <pre class="language-kotlin" data-language="kotlin"><code is:raw="" class="language-kotlin"><span class="token keyword">var</span> test <span class="token operator">=</span> <span class="token string-literal singleline"><span class="token string">"hello"</span></span>
   <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> field <span class="token operator">+</span> <span class="token string-literal singleline"><span class="token string">" world"</span></span>
   <span class="token keyword">set</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">{</span> field <span class="token operator">=</span> value <span class="token punctuation">}</span>
-</code></pre>   </main> <footer> <span>© 2026 CeleDev97</span> </footer> </body></html>
+</code></pre>  </div> </div>  </main> <footer> <span>© 2026 CeleDev97</span> </footer> <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const CHAR_DELAY = 35;
+      const AFTER_CMD_DELAY = 200;
+      const BETWEEN_BLOCKS_DELAY = 300;
+
+      const blocks = Array.from(document.querySelectorAll('.terminal-block'));
+      if (!blocks.length) return;
+
+      blocks.forEach(block => {
+        const cmd = block.querySelector('.cmd-line, .home-prompt');
+        const output = block.querySelector('.terminal-output');
+        if (cmd) { cmd.dataset.text = cmd.textContent; cmd.textContent = ''; }
+        if (output) output.style.visibility = 'hidden';
+      });
+
+      function typeCmd(cmd, done) {
+        const text = cmd.dataset.text;
+        let i = 0;
+        cmd.classList.add('typing');
+        const id = setInterval(() => {
+          cmd.textContent = text.slice(0, ++i);
+          if (i >= text.length) {
+            clearInterval(id);
+            cmd.classList.remove('typing');
+            setTimeout(done, AFTER_CMD_DELAY);
+          }
+        }, CHAR_DELAY);
+      }
+
+      function runBlock(index) {
+        if (index >= blocks.length) return;
+        const block = blocks[index];
+        const cmd = block.querySelector('.cmd-line, .home-prompt');
+        const output = block.querySelector('.terminal-output');
+        if (!cmd) { runBlock(index + 1); return; }
+        typeCmd(cmd, () => {
+          if (output) output.style.visibility = 'visible';
+          setTimeout(() => runBlock(index + 1), BETWEEN_BLOCKS_DELAY);
+        });
+      }
+
+      setTimeout(() => runBlock(0), 200);
+    });
+  </script> </body> </html>
