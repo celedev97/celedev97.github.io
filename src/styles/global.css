@@ -279,6 +279,10 @@ pre code {
 }
 
 /* ── Terminal command line ── */
+.terminal-block + .terminal-block {
+  margin-top: 2rem;
+}
+
 .cmd-line {
   color: var(--dim);
   font-size: 0.95rem;
@@ -290,8 +294,11 @@ pre code {
   color: var(--green);
 }
 
-.cmd-line + .cmd-line {
-  margin-top: -0.75rem;
+.cmd-line.typing::after,
+.home-prompt.typing::after {
+  content: '▋';
+  color: var(--green);
+  animation: blink 0.7s step-end infinite;
 }
 
 /* ── ls-style directory listing ── */

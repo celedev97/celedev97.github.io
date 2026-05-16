@@ -3,34 +3,40 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Home" description="CeleDev97 — Personal site of a programmer since 2008.">
-  <div class="home-section">
+  <div class="home-section terminal-block">
     <p class="home-prompt">whoami</p>
-    <p>
-      <strong>CeleDev97</strong> — Programmer since 2008.<br />
-      Java, Kotlin, C#, Python and a bunch of other stuff.
-    </p>
+    <div class="terminal-output">
+      <p>
+        <strong>CeleDev97</strong> — Programmer since 2008.<br />
+        Java, Kotlin, C#, Python and a bunch of other stuff.
+      </p>
+    </div>
   </div>
 
-  <div class="home-section">
+  <div class="home-section terminal-block">
     <p class="home-prompt">ls</p>
-    <ul class="home-links">
-      <li>
-        <a href="/devlog">devlog</a>
-        <span class="link-desc"> — dev musings and write-ups</span>
-      </li>
-      <li>
-        <a href="/about-me">about</a>
-        <span class="link-desc"> — more about me</span>
-      </li>
-    </ul>
+    <div class="terminal-output">
+      <ul class="home-links">
+        <li>
+          <a href="/devlog">devlog</a>
+          <span class="link-desc"> — dev musings and write-ups</span>
+        </li>
+        <li>
+          <a href="/about-me">about</a>
+          <span class="link-desc"> — more about me</span>
+        </li>
+      </ul>
+    </div>
   </div>
 
-  <div class="home-section">
+  <div class="home-section terminal-block">
     <p class="home-prompt">cat links.txt</p>
-    <ul class="home-links">
-      <li><a href="https://github.com/celedev97" target="_blank" rel="noopener">github.com/celedev97</a></li>
-      <li><a href="https://www.linkedin.com/in/celedev97/" target="_blank" rel="noopener">linkedin.com/in/celedev97</a></li>
-      <li><a href="mailto:celedev97@gmail.com">celedev97@gmail.com</a></li>
-    </ul>
+    <div class="terminal-output">
+      <ul class="home-links">
+        <li><a href="https://github.com/celedev97" target="_blank" rel="noopener">github.com/celedev97</a></li>
+        <li><a href="https://www.linkedin.com/in/celedev97/" target="_blank" rel="noopener">linkedin.com/in/celedev97</a></li>
+        <li><a href="mailto:celedev97@gmail.com">celedev97@gmail.com</a></li>
+      </ul>
+    </div>
   </div>
 </BaseLayout>

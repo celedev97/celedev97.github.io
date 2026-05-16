@@ -27,5 +27,50 @@ const { title, description = 'CeleDev97 — Personal site' } = Astro.props;
       <slot />
     </main>
     <Footer />
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const CHAR_DELAY = 35;
+      const AFTER_CMD_DELAY = 200;
+      const BETWEEN_BLOCKS_DELAY = 300;
+
+      const blocks = Array.from(document.querySelectorAll('.terminal-block'));
+      if (!blocks.length) return;
+
+      blocks.forEach(block => {
+        const cmd = block.querySelector('.cmd-line, .home-prompt');
+        const output = block.querySelector('.terminal-output');
+        if (cmd) { cmd.dataset.text = cmd.textContent; cmd.textContent = ''; }
+        if (output) output.style.visibility = 'hidden';
+      });
+
+      function typeCmd(cmd, done) {
+        const text = cmd.dataset.text;
+        let i = 0;
+        cmd.classList.add('typing');
+        const id = setInterval(() => {
+          cmd.textContent = text.slice(0, ++i);
+          if (i >= text.length) {
+            clearInterval(id);
+            cmd.classList.remove('typing');
+            setTimeout(done, AFTER_CMD_DELAY);
+          }
+        }, CHAR_DELAY);
+      }
+
+      function runBlock(index) {
+        if (index >= blocks.length) return;
+        const block = blocks[index];
+        const cmd = block.querySelector('.cmd-line, .home-prompt');
+        const output = block.querySelector('.terminal-output');
+        if (!cmd) { runBlock(index + 1); return; }
+        typeCmd(cmd, () => {
+          if (output) output.style.visibility = 'visible';
+          setTimeout(() => runBlock(index + 1), BETWEEN_BLOCKS_DELAY);
+        });
+      }
+
+      setTimeout(() => runBlock(0), 200);
+    });
+  </script>
   </body>
 </html>
