@@ -1,6 +1,12 @@
-# ---> VisualStudioCode
+# Editor
 .settings
+.vscode/
 
-# HUGO
+# Astro
+dist/
+.astro/
+node_modules/
+
+# Legacy Hugo (no longer used)
 /public/*
 /resources/_gen/*

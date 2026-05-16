@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = (await getCollection('devlog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<BaseLayout title="DevLog" description="Dev musings and write-ups.">
+  <div class="cmd-line">ls -la /devlog/</div>
+
+  {posts.length === 0 ? (
+    <p style="color: var(--dim);">No posts yet.</p>
+  ) : (
+    <div>
+      <p class="ls-total">total {posts.length}</p>
+      {posts.map((post) => {
+        const date = post.data.date.toLocaleDateString('en-US', {
+          year: 'numeric', month: 'short', day: '2-digit'
+        });
+        return (
+          <div class="ls-entry">
+            <span class="ls-date">{date}</span>
+            <div class="ls-info">
+              <div class="ls-name">
+                <a href={`/devlog/${post.slug}`}>{post.slug}/</a>
+              </div>
+              <div class="ls-desc">{post.data.title}</div>
+              {post.data.tags && post.data.tags.length > 0 && (
+                <div class="ls-tags">
+                  {post.data.tags.map((tag) => <span class="tag">{tag}</span>)}
+                </div>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  )}
+</BaseLayout>

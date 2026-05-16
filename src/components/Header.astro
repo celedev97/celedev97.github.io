@@ -1,0 +1,18 @@
+---
+const pathname = Astro.url.pathname;
+---
+
+<header>
+  <a href="/" class="header-brand">
+    <span class="prompt-user">root</span>
+    <span class="prompt-at">@</span>
+    <span class="prompt-host">cele.dev</span>
+    <span class="prompt-path">:~</span>
+    <span class="prompt-dollar">$</span>
+    <span class="cursor"></span>
+  </a>
+  <nav>
+    <a href="/devlog" aria-current={pathname.startsWith('/devlog') ? 'page' : undefined}>devlog</a>
+    <a href="/about-me" aria-current={pathname === '/about-me' || pathname === '/about-me/' ? 'page' : undefined}>about</a>
+  </nav>
+</header>

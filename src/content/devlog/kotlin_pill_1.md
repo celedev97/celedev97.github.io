@@ -1,10 +1,6 @@
 ---
 title: "Kotlin's pills #1 properties introduction"
 date: 2020-07-17T18:24:53+02:00
-toc: false
-images:
-
-
 tags:
   - kotlin
   - kotlin_pills
