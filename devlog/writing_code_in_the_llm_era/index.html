@@ -1,78 +1,96 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="CeleDev97 — Personal site"><title>Writing Code in the LLM Era — are we still programmers? | CeleDev97</title><link rel="icon" type="image/png" href="/img/celedev97.png"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css"><link rel="stylesheet" href="/_astro/_slug_.ChLNNKwH.css"></head> <body> <header> <a href="/" class="header-brand"> <span class="prompt-user">root</span> <span class="prompt-at">@</span> <span class="prompt-host">cele.dev</span> <span class="prompt-path">:~</span> <span class="prompt-dollar">$</span> <span class="cursor"></span> </a> <nav> <a href="/devlog" aria-current="page">devlog</a> <a href="/about-me">about</a> </nav> </header> <main>  <div class="terminal-block"> <div class="cmd-line">cat /devlog/writing_code_in_the_llm_era.md</div> <div class="terminal-output"> <h1>Writing Code in the LLM Era — are we still programmers?</h1> <p class="post-slim-meta"> 2026-05-16 · #llm · #ai · #coding </p>  <p>I started writing code in an old era — before Stack Overflow existed, when coding was seen as a dark art and you learned from books.
-If you got stuck, you posted on a forum and waited hours or days for an answer. Often the answer wasn’t even helpful.</p>
-<p>Coding was slow. Write, compile, run, debug, repeat. Grueling — but also deeply rewarding.
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="CeleDev97 — Personal site"><title>Writing Code in the LLM Era — are we still programmers? | CeleDev97</title><link rel="icon" type="image/png" href="/img/celedev97.png"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css"><link rel="stylesheet" href="/_astro/_slug_.ChLNNKwH.css"></head> <body> <header> <a href="/" class="header-brand"> <span class="prompt-user">root</span> <span class="prompt-at">@</span> <span class="prompt-host">cele.dev</span> <span class="prompt-path">:~</span> <span class="prompt-dollar">$</span> <span class="cursor"></span> </a> <nav> <a href="/devlog" aria-current="page">devlog</a> <a href="/about-me">about</a> </nav> </header> <main>  <div class="terminal-block"> <div class="cmd-line">cat /devlog/writing_code_in_the_llm_era.md</div> <div class="terminal-output"> <h1>Writing Code in the LLM Era — are we still programmers?</h1> <p class="post-slim-meta"> 2026-05-16 · #llm · #ai · #coding </p>  <p>I started writing code in an old era — before Stack Overflow existed, when coding was seen as a dark art and you learned from books.<br/>
+If you got stuck, you posted on a forum and waited hours or days for an answer.<br/>
+Often the answer wasn’t even helpful.</p>
+<p>Coding was slow. Write, compile, run, debug, repeat. Grueling — but also deeply rewarding.<br/>
 When something finally worked after hours of fighting, the sense of accomplishment was real.</p>
-<h2 id="enter-copilot">Enter Copilot</h2>
+<h2 id="then-the-copilot-came-in">Then the Copilot came in…</h2>
 <p>Thanks to my university student status I got early access to GitHub Copilot, and it was a game changer.</p>
-<p>Not just autocomplete — it completed entire lines, entire functions, pulling context from the surrounding code.
-It felt like having a blazingly fast pair programmer. Sometimes dumb, often good enough, always fast.</p>
-<p>At first I was skeptical. I thought it would make me lazy, erode my skills.
-It didn’t. It actually made me write <em>better</em> code — surfacing approaches I wouldn’t have thought of, generating patterns I hadn’t seen before.
+<p>It was not just autocomplete like the intellisense or stuff like that — it completed entire lines, entire functions, pulling context from the surrounding code.<br/>
+It felt like having a blazingly fast pair programmer. Sometimes dumb, often good enough, but always extremely fast.</p>
+<p>At first I was skeptical. I thought it would make me lazy, erode my skills.<br/>
+It didn’t. It actually made me write <em>better</em> code — surfacing approaches I wouldn’t have thought of, generating patterns I hadn’t seen before, and thanks to my curiosity it even becaming a way of learning <em>Why did it write it like this? I need to understand</em><br/>
 Reading, reviewing, and accepting a suggestion is much faster than typing from scratch, and you still understand every line.</p>
 <h2 id="the-agent-shift">The agent shift</h2>
 <p>Then came the chat inside the IDE, and I hated it immediately.</p>
-<p><em>I am the human. I do the thinking. I do the coding.</em> A chat felt like a gimmick.</p>
-<p>I was wrong.</p>
-<p>Once the chat stopped being a chat and started becoming an agent, everything changed.
+<p><em>I am the human. I do the thinking. I do the coding.</em><br/>
+A chat felt like a gimmick.</p>
+<p>Oh boy I was very much fucking wrong…</p>
+<p>Once the chat stopped being a chat and started becoming an agent, everything changed.<br/>
 It wasn’t about asking questions — it was about delegating tasks.</p>
 <p>That boring CRUD you’ve written a hundred times?</p>
 <blockquote>
 <p><em>“Write me a CRUD based on how it’s done in this other class.”</em></p>
 </blockquote>
 <p>Done.</p>
-<p>Tests? Great idea, terrible chore. I like creating things. Writing code that checks if the code works is not creating, it’s bookkeeping. And now?</p>
+<p>Test driven design? Great idea for avoiding regression, boring to mantain, a terrible chore.<br/>
+I like creating things, writing code that checks if the code works is not creating, it’s just boring…</p>
+<p>And now?</p>
 <blockquote>
 <p><em>“Write me tests for this class.”</em></p>
 </blockquote>
 <p>Done.</p>
 <h2 id="then-came-claude">Then came Claude</h2>
 <p>Copilot was impressive. Claude is a different category.</p>
-<p>Not just smarter suggestions — a full agent that reads your entire codebase, plans changes across multiple files, writes code, runs commands, reads the output, fixes its own mistakes, and iterates.
+<p>It was not about just smarter suggestions or delegating small tasks, it is a full agent that reads your entire codebase, plans changes across multiple files, writes code, runs commands, reads the output, fixes its own mistakes, and iterates.<br/>
 You describe a goal. It executes.</p>
-<p>I rewrote this entire website from Hugo to Astro — new framework, new theme, custom terminal design, animated typewriter effect, MDX support — and I barely typed a line of code myself.
-Directed it? Yes. Reviewed it? Yes. Wrote it? Not really.</p>
+<p>I rewrote this entire website from Hugo to Astro — new framework, new theme, custom terminal design, animated typewriter effect, MDX support — and I barely typed a line of code myself.<br/>
+Directed it? Yes.<br/>
+Reviewed it? Yes.<br/>
+Wrote it? Not really.<br/></p>
 <p>And here’s the uncomfortable part: it did it faster and with fewer mistakes than I would have alone.</p>
-<p>The gap between what a senior developer can produce in a day and what Claude can produce in an hour is no longer a gap — it’s a canyon.
-The average programmer, grinding through boilerplate, looking up docs, copy-pasting from Stack Overflow — that workflow is effectively obsolete.</p>
-<p>This doesn’t mean programmers are obsolete. But it does mean that <em>being average is no longer enough</em>.
-If you bring the same value to a task that an LLM does, you are being outcompeted. Silently, cheaply, and at scale.</p>
+<p>The gap between what a senior developer can produce in a day and what Claude can produce in an hour is no longer a gap, it’s a canyon.<br/>
+The average programmer, grinding through boilerplate, looking up docs, copy-pasting from Stack Overflow… that workflow is effectively obsolete.</p>
+<p>This doesn’t mean programmers are obsolete.<br/>
+But it does mean that <em>being average is no longer enough</em>.<br/>
+If you bring the same value to a task that an LLM does, you are being outcompeted.<br/>
+Silently, cheaply, and at scale, because 20$ of Claude Pro can probably do it faster than what a programmer can.</p>
 <h2 id="are-we-still-programmers">Are we still programmers?</h2>
-<p>The LLM era is making coding faster, more efficient — but it raises an uncomfortable question:</p>
+<p>The LLM era is making coding faster, more efficient… but it raises an uncomfortable question:</p>
 <p><em>If a machine can write the code, do we still need to know how to code?</em></p>
 <p>I think the answer is <strong>yes, but differently</strong>.</p>
-<p>You still need to understand what the LLM is doing. You need to read and evaluate the code it generates — spot security issues, performance problems, design mistakes.
-For that, you need a solid grasp of frameworks, patterns, best practices, and trade-offs.
+<p>You still need to understand what the LLM is doing. <br/>
+You need to read and evaluate the code it generates, spot security issues, performance problems, design mistakes.<br/>
+For that, you need a solid grasp of frameworks, patterns, best practices, and trade-offs.<br/>
 The LLM is only as useful as the person directing it.</p>
 <h2 id="what-about-the-joy-of-it">What about the joy of it?</h2>
 <p>Here’s the harder question.</p>
-<p>What about opening the IDE with a half-formed idea, watching the code take shape as you write it — the repository growing organically, the architecture emerging?
-What about the pure satisfaction of solving a problem with your own two hands?</p>
+<p>What about opening the IDE with a half-formed idea, watching the code take shape as you write it, whatching the repository growing, the architecture take shape while you go forward and reorganize your code because it need to be clean, it need to be perfect… ?<br/>
+What about the pure satisfaction of solving a problem with your own hands?</p>
 <p>When an LLM can replicate that process in minutes, what’s left?</p>
-<p>I don’t have a clean answer. But I don’t think the soul of code lives in the keystrokes.
-It lives in the idea, in the problem being solved, in the impact it has.
-The creativity, the vision, the obsession with getting it right — those are still ours.</p>
+<p>I don’t have a clean answer.<br/>
+But I don’t think the soul of code lives in the keystrokes.<br/>
+It lives in the idea, in the problem being solved, in the impact it has.<br/>
+The creativity, the vision, the obsession with getting it right… those are still ours.</p>
 <h2 id="where-this-leaves-us">Where this leaves us</h2>
-<p>Two years ago I would have said <em>code written by a machine will never have the soul of code written by a human.</em>
-I’m not so sure anymore.</p>
-<p>The role is shifting. The programmer of the future is less about being the fastest typist or knowing every language quirk, and more about being:</p>
+<p>Two years ago I would have said <em>code written by a machine will never have the soul of code written by a human.</em><br/>
+Now? I’m not so sure anymore, often Claude can write stuff in a better way than the average programmer if directed correctly.</p>
+<p>The role is shifting.<br/>
+The programmer of the future is less about being the fastest typist or knowing every language quirk, and more about being:</p>
 <ul>
 <li>a good architect</li>
 <li>a sharp problem solver</li>
 <li>a rigorous reviewer</li>
 <li>a clear communicator</li>
 </ul>
-<p>Was that what I imagined when I started coding? No.
+<p>Was that what I imagined when I started coding? No.<br/>
 Will it be fun? I genuinely don’t know — but I’m curious.</p>
 <h2 id="closing-thought">Closing thought</h2>
-<p>I sometimes miss the old days. Then I remember that I rewrote my entire website in a new framework in under 30 minutes.</p>
-<p>Would I have done that without an LLM? Probably not. The old version would have stayed forever, rotting quietly.</p>
-<p>Why not rewrite that old codebase you’ve been avoiding?
-Why not finally start that side project you’ve been putting off for years?
+<p>I sometimes miss the old days…<br/>
+I sometime fear that by keeping giving directions and reviewing code i will lose my <em>magic touch</em>…<br/>
+Then I remember that I rewrote my entire website in a new framework in under 30 minutes.</p>
+<p>Would I have done that without an LLM? Probably not.<br/>
+The old version would have stayed forever, rotting quietly, it was not a priority.</p>
+<p>So instead of thinking about the lost joy of hitting the keyboard and hoping the codes compiles…<br/>
+Why not rewrite that old codebase you’ve been avoiding?<br/>
+Why not finally start that side project you’ve been putting off for years?<br/>
 Why not learn that technology you never had time for?</p>
-<p>Writing code has changed — faster, less personal. But it doesn’t have to be less creative or less rewarding.
-It just means thinking of ourselves differently: not as code monkeys, but as orchestrators.</p>
-<p>The love of building things, solving problems, and exploring what’s possible?
-That part doesn’t go away. It just gets faster.</p>  </div> </div>  </main> <footer> <span>© 2026 CeleDev97</span> </footer> <script>
+<p>Writing code has changed, it’s faster, less personal.<br/>
+But it doesn’t mean that it needs to be less creative or less rewarding.<br/>
+It just means thinking of ourselves differently: not as code monkeys, but as orchestrators of an army of mechanical code monkeys.</p>
+<p>The love of building things, solving problems, and exploring what’s possible?<br/>
+That part didn’t go away.<br/>
+It just got faster, and while that may be weird at first… it means we can achieve so much more, create so much more, and if that’s the case…<br/>
+Is it worth it to lose time fighting nostalgia instead of jumping on the train of creativity and let the LLM do the heavy lifting?</p>  </div> </div>  </main> <footer> <span>© 2026 CeleDev97</span> </footer> <script>
     document.addEventListener('DOMContentLoaded', () => {
       const TYPE_DURATION = 300; // ms total per command, regardless of length
       const AFTER_CMD_DELAY = 200;
